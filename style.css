@@ -12,6 +12,21 @@ body {
     padding: 40px 20px;
 }
 
+.award-box {
+    background-color: #f1f8e9;
+    border: 2px solid #a9df35;
+    color: #000000;
+    text-align: center;
+    padding: 5px;
+    margin: 0 auto 30px auto;
+    max-width: 350px;
+    border-radius: 8px;
+    font-weight: 400;
+    font-family: 'Onest', sans-serif;
+    font-size: 16px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+
 .container {
     max-width: 800px;
     margin: 0 auto;
@@ -29,6 +44,11 @@ h1 {
     font-size: 1.1rem;
     margin-bottom: 20px;
 }
+
+.nav a {
+    color: #000000;
+    text-decoration: none;
+  }
 
 .divider {
     border: none;
