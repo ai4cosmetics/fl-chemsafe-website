@@ -2,397 +2,220 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>FL-CHEMSAFE | Federated Chemical Safety for Next Generation Risk Assessment</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" type="image/png" href="images/flavicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="FL-CHEMSAFE enables secure and collaborative QSAR model development for chemical prioritisation and hazard screening through federated learning." />
+  <meta name="keywords" content="federated learning, chemical safety, QSAR, toxicity prediction, AI4Cosmetics, chemsafe" />
+  <meta name="author" content="AI4Cosmetics" />
+  <title>FL-CHEMSAFE | Federated Chemical Safety Assessment</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=Roboto:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="images/flavicon.png" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;600&family=Onest:wght@400;500;600&display=swap" rel="stylesheet" />
+
   <style>
+    :root {
+      --bg-light: #f1f2f3;
+      --text-black: #000000;
+      --font-title: 'Roboto Mono', monospace;
+      --font-body: 'Onest', sans-serif;
+    }
+
     * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
     }
 
     body {
-      font-family: 'Onest', sans-serif;
-      background-color: #f1f2f3;
-      color: #000000;
+      background-color: var(--bg-light);
+      color: var(--text-black);
+      font-family: var(--font-body);
       line-height: 1.6;
-      padding: 40px 20px;
-    }
-
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       text-align: center;
+      padding: 2rem;
     }
 
-    h1 {
-      font-size: 3rem;
-      font-weight: 700;
-      letter-spacing: 8px;
-      margin-bottom: 30px;
+    header {
+      margin-bottom: 3rem;
     }
 
-    .nav {
-      font-size: 1.1rem;
-      margin-bottom: 20px;
-    }
-
-    .divider {
-      border: none;
-      height: 1px;
-      background-color: #000000;
-      margin: 30px 0;
-    }
-
-    .intro-text {
-      text-align: center;
-      margin: 40px 0;
-    }
-
-    .intro-text p {
-      margin-bottom: 20px;
-      font-size: 1rem;
-    }
-
-    .centered-paragraph {
-      text-align: center;
-    }
-
-    .content {
-      text-align: left;
-      margin: 40px 0;
-    }
-
-    .content p {
-      margin-bottom: 20px;
-      font-size: 1rem;
-    }
-
-    .content h2 {
-      font-size: 1.2rem;
+    header h1 {
+      font-family: var(--font-title);
       font-weight: 600;
-      margin: 30px 0 15px 0;
+      font-size: 3rem;
+      letter-spacing: 0.05em;
+    }
+
+    header p {
+      font-family: var(--font-title);
+      font-weight: 400;
+      font-size: 1.4rem;
+      margin-top: 0.5rem;
+    }
+
+    section {
+      width: 100%;
+      max-width: 800px;
+      margin-bottom: 3rem;
+    }
+
+    section:last-of-type {
+      margin-bottom: 2rem;
+    }
+
+    h2 {
+      font-family: var(--font-title);
+      font-weight: 500;
+      font-size: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .cards {
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    @media (min-width: 700px) {
+      .cards {
+        grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      }
+    }
+
+    .list-items {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
       text-align: center;
     }
 
-    .content ul {
-      margin: 15px 0;
-      padding-left: 20px;
+    .list-item {
+      line-height: 1.6;
     }
 
-    .content li {
-      margin-bottom: 8px;
+    .list-link {
+      font-family: var(--font-title);
+      font-weight: 600;
+      color: var(--text-black);
+      text-decoration: none;
+      transition: color 0.2s ease;
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+
+    .list-link:hover,
+    .list-link:active {
+      color: #0061FF;
+    }
+
+    .service-card {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 0 6px rgba(0,0,0,0.05);
+      text-align: center;
+    }
+
+    .service-card .icon {
+      font-size: 2rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .service-card h3 {
+      font-family: var(--font-title);
+      font-weight: 600;
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .service-card p {
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    footer {
+      font-size: 0.85rem;
+      color: #333;
+      text-align: center;
+      width: 100%;
+      max-width: 1000px;
+      margin-top: 0;
+    }
+
+    footer p {
+      margin: 0.25rem 0;
     }
 
     a {
-      color: #037bff;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-
-    a:hover {
-      color: #037bff;
+      color: inherit;
       text-decoration: underline;
     }
 
-    .blue-text {
-      color: #037bff;
-    }
-
-    .footer {
-      margin-top: 60px;
-      padding-top: 30px;
-      border-top: 1px solid #000000;
-      text-align: center;
-    }
-
-    .footer-content {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-
-    .social-links {
-      display: flex;
-      gap: 15px;
-      align-items: center;
-    }
-
-    .logos {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 30px;
-      margin: 20px 0;
-      flex-wrap: wrap;
-    }
-
-    .logo {
-      height: 60px;
-      width: auto;
-      object-fit: contain;
-    }
-
-    .smaller-logo {
-      height: 45px;
-    }
-
-    .social-icon {
-      width: 24px;
-      height: 24px;
-      object-fit: contain;
-    }
-
-    .copyright {
-      font-family: 'Onest', sans-serif;
-      font-size: 0.9rem;
-      font-weight: 400;
-    }
-
-    .use-case-image {
-      margin: 30px 0;
-      text-align: center;
-    }
-
-    .case-study-img {
-      max-width: 100%;
-      height: auto;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-      margin-bottom: 15px;
-    }
-
-    .image-caption {
-      font-size: 0.9rem;
-      color: #666;
-      font-style: italic;
-      margin: 10px 0;
-      text-align: left;
-      max-width: 800px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 2rem;
-        letter-spacing: 4px;
-      }
-
-      .footer-content {
-        flex-direction: column;
-        text-align: center;
-      }
-    }
   </style>
-
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>FL-CHEMSAFE | Federated Chemical Safety for Next Generation Risk Assessment</title>
-  <meta name="description" content="FL-CHEMSAFE is a pioneering initiative that empowers R&D teams and regulatory experts to collaborate on chemical safety assessment using federated decentralised approaches without sharing sensitive data. We support privacy-first innovation for safer chemicals and next generation risk assessment.">
-  <meta name="robots" content="index, follow">
-  <meta name="author" content="Dr Nicoleta Spînu, AI4Cosmetics">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="FL-CHEMSAFE | Federated Chemical Safety for Next Generation Risk Assessment">
-  <meta property="og:description" content="Collaborate securely across stakeholders using federated learning to improve the confidence in New Approach Methodologies for safety assessment without sharing sensitive data.">
-  <meta property="og:image" content="https://fl-chemsafe.com/images/usecase_fl-chemsafe.png">
-  <meta property="og:url" content="https://fl-chemsafe.com/">
-  <meta property="og:type" content="website">
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="FL-CHEMSAFE | Federated Chemical Safety for Next Generation Risk Assessment">
-  <meta name="twitter:description" content="Privacy-preserving AI for chemicals: collaborate on safety assessment without exposing your proprietary data.">
-  <meta name="twitter:image" content="https://fl-chemsafe.com/images/usecase_fl-chemsafe.png">
-
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" type="image/png" href="images/flavicon.png">
-  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=Roboto:wght@300;400;500;600&display=swap" rel="stylesheet">
-
 </head>
 <body>
 
-  <div class="container">
+  <header>
     <h1>FL-CHEMSAFE</h1>
-    <div class="nav">
-        <a href="index.html">Home</a>
+    <p>Federated Chemical Safety Assessment</p>
+  </header>
+
+  <section id="about">
+    <p>
+      FL-CHEMSAFE enables secure and collaborative QSAR model development for chemical
+      prioritisation and hazard screening — addressing data heterogeneity across public and
+      proprietary sources while enhancing the performance and reliability of local predictive models.
+    </p>
+  </section>
+
+  <section id="learn">
+    <h2>NEW TO FEDERATED LEARNING?</h2>
+    <div class="list-items">
+      <div class="list-item">
+        <a href="https://ai4cosmetics.substack.com/s/fl-chemsafe" target="_blank" class="list-link">Blog posts ➚</a>
+        Become an expert and learn the basics of federated learning approaches.
       </div>
-    <hr class="divider" />
-
-    <div class="intro-text">
-      <p>
-        <b>Federated Chemical Safety Assessment (FL-CHEMSAFE)</b> is an initiative by
-        <a href="https://www.linkedin.com/in/nicoleta-spinu/" target="_blank"><span class="blue-text">Dr Nicoleta Spînu</span></a>.
-      </p>
-
-      <p>
-        Frustrated by the constant trade-offs between working with limited, siloed and fragmented data, the need to adapt (novel) methodologies to data size and availability, ending up solving one task within a problem space while biology is much more complex, FL-CHEMSAFE was set out to enable a more integrated, holistic and adaptive approach to chemical safety assessment.
-      </p>
-
-      <p>
-        Our goal is to facilitate knowledge transfer and privacy-preserved collaborations for comprehensive and better informed decision-making, contributing to the real-world adoption of New Approach Methodologies for Next Generation Risk Assessment.
-      </p>
-    </div>
-
-    <div class="use-case-image">
-      <img src="images/usecase_fl-chemsafe.png" alt="Federated skin sensitisation QSAR use case" class="case-study-img">
-      <p class="image-caption">
-        <strong>Use Case Example:</strong> Federated skin sensitisation logistic regression QSAR demonstrating how organisations with different compound distributions can collaborate to create a more balanced and accurate global model while keeping their data private.
-      </p>
-    </div>
-
-    <div class="content">
-      <h2>Join us</h2>
-      <p class="centered-paragraph">
-        We are currently designing the prototype.
-        <a href="mailto:hello@ai4cosmetics.com" target="_blank">Get in touch</a> and help shape its direction.
-      </p>
-
-      <h2>New to federated approaches?</h2>
-      <ul>
-        <li>Check out our 7-day newsletter challenge. Subscribe <a href="https://subscribepage.io/fl-chemsafe" target="_blank"><span class="blue-text">here</span></a>.</li>
-        <li>Sign up for our next event <a href="https://lu.ma/o19a46r8" target="_blank"><span class="blue-text">here</span></a>.</li>
-      </ul>
-      <h2>How can federated approaches help you and your team?</h2>
-      Here are some examples:
-      <ul>
-        <li>Identify similar analogues for read-across from proprietary sources</li>
-        <li>Improve the applicability domain of your local QSAR model</li>
-        <li>Exchange knowledge, including from unstructured data, using LLMs and RAGs</li>
-      </ul>
-
-      <h2>What can we do for your team now?</h2>
-      <ul>
-        <li>Live workshops (in person & online)</li>
-        <li>Federated pipeline design & implementation support</li>
-        <li>Federated readiness audit & technical mentorship</li>
-      </ul>
-      <div class="content">
-        <h2>Frequently Asked Questions</h2>
-        <div class="faq-item">
-          <button class="faq-question">Is your technology secure?</button>
-          <div class="faq-answer">
-            <p>Yes, privacy and security are at the core of federated approaches. By using federated pipelines, your proprietary or sensitive data never leaves your premises. Also, Flower is ISO 27001 certified.</p>
-          </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question">What about data where organisations have different data modalities, formats and ontologies?</button>
-          <div class="faq-answer">
-            <p>This is part of the design of the federated pipeline, where parties have to discuss and agree on the type of information and parameters to be co-trained or shared. There are various federated methods, and Flower facilitates their implementation and allows for personalised collaborations!</p>
-          </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question">What about data size? For example, for the scenario where a company has more positive compounds and the other has more negative compounds, is the federated model able to learn from both local models?</button>
-          <div class="faq-answer">
-            <p>Yes, our simulated use case on mutagenicity, where one organisation had 80% mutagenic compounds and the other organisation had 20% mutagenic compounds, showed that the federated global model outperformed both local models and had a balanced performance overall. Thus, the global model was able to differentiate between mutagenic and non-mutagenic compared to a local model.</p>
-          </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question">How does the federated training work?</button>
-          <div class="faq-answer">
-            <p>There are various approaches. The most used one is cyclical, where the local models are co-trained simultaneously in multiple rounds. We are happy to run live workshops. <a href="mailto:hello@ai4cosmetics.com" target="_blank">Get in touch</a>!</p>
-          </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question">Who can join FL-CHEMSAFE?</button>
-          <div class="faq-answer">
-            <p>Researchers, regulatory experts, industry professionals, raw material suppliers, chemical manufacturers, consultancy, <i>in vitro</i> testing providers. FL-CHEMSAFE can help sharing knowledge across departments and stakeholders, flexible and scalable.</p>
-          </div>
-        </div>
-      
-        
+      <div class="list-item">
+        <a href="#" target="_blank" class="list-link">Publication ➚</a>
+        Read our peer-reviewed publication (preprint here).
       </div>
-      
-
-      
-      <div class="info-block">
-        Access proprietary knowledge via model training and analytics without exposing your private data.
-      </div>
-      
-      <style>
-      .info-block {
-        background-color: #f5f5f5;
-        border-left: 4px solid #a9df35;
-        border-right: 4px solid #a9df35;
-        padding: 15px;
-        margin: 20px 0;
-        border-radius: 4px;
-        text-align: center; 
-      }
-      </style>
-
-      <h2>Supported by</h2>
-      <div class="logos">
-        <a href="https://flower.ai/pilot/" target="_blank" rel="noopener noreferrer">
-            <img src="images/flower-pilot-logo.png" alt="Flower Pilot" class="logo">
-        </a>
-        <a href="https://www.noord-holland.nl/" target="_blank" rel="noopener noreferrer">
-          <img src="images/mit-logo.png" alt="MIT Noord-Holland" class="logo">
-        </a>
-        <a href="https://www.startupvillage.nl/" target="_blank" rel="noopener noreferrer">
-            <img src="images/startup-village-logo.png" alt="Startup Village" class="logo smaller-logo">
-        </a>
+      <div class="list-item">
+        <a href="https://github.com/ai4cosmetics/fl-chemsafe" target="_blank" class="list-link">Tutorial ➚</a>
+        Follow the open-source tutorial of the published simulated use cases.
       </div>
     </div>
+  </section>
 
-    <div class="award-box">
-      Oral Presentation QSAR2025 Award 🏆
-    </div>
-
-    <div class="content">
-      <h2>Aligned with the UN Sustainable Development Goals</h2>
-      <div class="logos">
-        <a>
-          <img src="images/sdg3-logo.png" alt="FL-CHEMSAFE commitment" class="logo">
-        </a>
-        <a>
-          <img src="images/sdg9-logo.png" alt="FL-CHEMSAFE commitment" class="logo">
-        </a>
-        <a>
-          <img src="images/sdg15-logo.png" alt="FL-CHEMSAFE commitment" class="logo">
-        </a>
+  <section id="team">
+    <h2>WHAT CAN WE DO FOR YOUR TEAM NOW?</h2>
+    <div class="cards">
+      <div class="service-card">
+        <div class="icon">🎓</div>
+        <h3>Live Workshops</h3>
+        <p>Bespoke interactive training sessions available in person and online.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon">🔧</div>
+        <h3>Pipeline Support</h3>
+        <p>Federated readiness audit, design, strategy, implementation and technical mentorship.</p>
       </div>
     </div>
-    <div class="footer">
-      <div class="footer-content">
-        <div class="social-links">
-          <a href="https://linkedin.com/company/ai4cosmetics" target="_blank">
-            <img src="images/linkedin-icon.png" alt="LinkedIn" class="social-icon">
-          </a>
-          <a href="mailto:hello@ai4cosmetics.com" target="_blank">
-            <img src="images/email-icon.png" alt="Email" class="social-icon">
-          </a>
-        </div>
-        <div class="copyright">
-          © AI4Cosmetics • Amsterdam • 2025
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- 100% privacy-first analytics -->
- <script async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
+  </section>
+
+  <section id="consortium">
+    <h2>WE ARE LOOKING FOR THOSE INTERESTED IN JOINING<br>THE PROOF-OF-VALUE CONSORTIUM</h2>
+    <p>For any queries, leave your <a href="mailto:hello@ai4cosmetics.com">message</a> or ping Dr Nicoleta Spînu on <a href="https://www.linkedin.com/in/nicoleta-spinu/" target="_blank">LinkedIn</a>.</p>
+  </section>
+
+  <footer>
+    <p>Supporting the UN Sustainable Development Goals — SDG 3 &amp; SDG 9</p>
+    <p>Noord Holland MIT Grant • Flower Pilot Program • QSAR2025 Award • WC13 L'OréaL Innovation Village</p>
+    <p>© <a href="https://www.ai4cosmetics.com" target="_blank">AI4Cosmetics</a> 2025</p>
+  </footer>
+
 </body>
-<script>
-  document.querySelectorAll('.faq-question').forEach(button => {
-    button.addEventListener('click', () => {
-      const answer = button.nextElementSibling;
-      const isOpen = answer.style.display === 'block';
-
-      // Close all
-      document.querySelectorAll('.faq-answer').forEach(a => a.style.display = 'none');
-
-      // Toggle current
-      answer.style.display = isOpen ? 'none' : 'block';
-    });
-  });
-</script>
-
 </html>
